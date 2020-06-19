@@ -1,0 +1,16 @@
+# NGINX Config File
+server {
+    listen 8080;
+    listen [::]:8080
+
+    root /var/www/html
+
+    index mppt.html
+
+    server_name _;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+}
